@@ -59,7 +59,7 @@ print("进入体温填报页面成功")
 time.sleep(2)
 
 secretKey = driver.find_element(by='id', value='afternoon')
-KeyNum = '36.8'
+KeyNum = '36.5'
 secretKey.send_keys(KeyNum)
 
 print("填入下午体温成功")
