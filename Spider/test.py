@@ -60,10 +60,15 @@ print("进入体温填报页面成功")
 time.sleep(2)
 
 secretKey = driver.find_element(by='id', value='afternoon')
+<<<<<<< HEAD
 def rands():
     b = '{:.1f}'.format(random.uniform(36.2, 36.7))
     return b
 secretKey.send_keys(rands())
+=======
+KeyNum = '36.6'
+secretKey.send_keys(KeyNum)
+>>>>>>> 0f2b6d856a034fc6b1f82f3e1b1979c58d68d905
 
 print("填入下午体温成功")
 
@@ -71,9 +76,7 @@ logbtn = driver.find_element(by='id', value='sub')
 logbtn.click()
 
 print("提交下午体温成功")
-
 print(driver.title)
-
 
 
 
