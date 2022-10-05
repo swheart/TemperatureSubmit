@@ -3,8 +3,8 @@ name: selenium
 # Controls when the action will run. 
 on:
   schedule:
-  # 定时任务，在每天的19点05分自动提交下午体温
-    - cron: '5 11 * * *'
+  # 定时任务，在每天的18点05分自动提交下午体温
+    - cron: '5 10 * * *'
 
 
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -37,6 +37,12 @@ jobs:
         run: pip install -r ./Spider/requirements.txt
       - name: 'Working'
         run: |
-          sudo cp -p ./chrome/chromedriver /usr/bin/
+          sudo apt-get install unzip
+          wget -N http://chromedriver.storage.googleapis.com/106.0.5249.61/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          chmod +x chromedriver
+          sudo mv -f chromedriver /usr/local/share/chromedriver
+          sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+          sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
           chmod -R 777 /usr/bin/chromedriver
           python ./Spider/test.py
