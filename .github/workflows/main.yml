@@ -39,10 +39,8 @@ jobs:
         run: |
           sudo apt-get remove google-chrome-stable
           sudo rm -rf ~/.config/google-chrome
-          wget http://docmt.mrshallwe.com/google-chrome-stable_current_amd64.deb
+          wget https://www.slimjet.com/chrome/download-chrome.php?file=files%2F104.0.5112.102%2Fgoogle-chrome-stable_current_amd64.deb
           sudo dpkg -i ./google-chrome-stable_current_amd64.deb
           sudo cp -p ./chrome/chromedriver /usr/bin/
           chmod -R 777 /usr/bin/chromedriver
-          sudo rm -f /etc/localtime
-          sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
           python ./Spider/test.py
