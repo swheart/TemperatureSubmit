@@ -3,8 +3,8 @@ name: selenium
 # Controls when the action will run. 
 on:
   schedule:
-  # 定时任务，在每天的18点05分自动提交下午体温
-    - cron: '5 10 * * *'
+  # 定时任务，在每天的18点10分自动提交下午体温
+    - cron: '10 10 * * *'
 
 
   # Triggers the workflow on push or pull request events but only for the main branch
